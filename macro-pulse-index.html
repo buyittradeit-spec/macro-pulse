@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macro Pulse — buyittradeit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0C0E;
+    --panel: #14171B;
+    --panel-edge: #24282E;
+    --text: #E8E6E1;
+    --muted: #8B9198;
+    --amber: #E8A33D;
+    --green: #4CAF6D;
+    --red: #C4573F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px 80px;
+  }
+
+  main {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  a.backlink {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-family: 'IBM Plex Mono', monospace;
+    margin: 20px 0 8px;
+    border: 1px solid var(--panel-edge);
+    border-radius: 999px;
+    padding: 6px 14px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  a.backlink:hover {
+    color: var(--amber);
+    border-color: var(--amber);
+  }
+
+  .hero {
+    padding: 32px 0 24px;
+    border-bottom: 1px solid var(--panel-edge);
+  }
+
+  h1 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: clamp(34px, 8vw, 52px);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+
+  h1 .accent { color: var(--amber); }
+
+  .tagline {
+    margin-top: 12px;
+    max-width: 54ch;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .sample-notice {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--amber);
+    background: rgba(232, 163, 61, 0.08);
+    border: 1px solid rgba(232, 163, 61, 0.3);
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+
+  section { margin-top: 32px; }
+
+  h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .macro-card {
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 8px;
+    padding: 18px;
+  }
+
+  .macro-card .name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .macro-card .value {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .macro-card .change {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  .change.up { color: var(--green); }
+  .change.down { color: var(--red); }
+  .change.flat { color: var(--muted); }
+
+  .macro-card .asof {
+    margin-top: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  .explain p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .explain p:last-child { margin-bottom: 0; }
+  .explain strong { color: var(--amber); font-weight: 600; }
+
+  footer {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--panel-edge);
+    padding-top: 20px;
+  }
+
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 480px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <a class="backlink" href="https://buyittradeit.com">&larr; buyittradeit.com</a>
+
+  <div class="hero">
+    <h1>MACRO <span class="accent">PULSE</span></h1>
+    <p class="tagline">The handful of numbers that move ES/NQ when they print. CPI, jobs, rates, growth &mdash; last reading, and which direction it moved.</p>
+    <div class="sample-notice">&#9888; SAMPLE DATA — this page is a front-end preview. Live FRED data wiring comes next.</div>
+  </div>
+
+  <section>
+    <h2>Key Series</h2>
+    <div class="grid" id="macroGrid">
+      <!-- Populated by renderCards() below using SAMPLE_DATA -->
+    </div>
+  </section>
+
+  <section class="explain">
+    <h2>What These Actually Move</h2>
+    <div class="macro-card">
+      <p><strong>CPI (inflation)</strong> — a hotter-than-expected print usually pressures index futures lower, since it raises odds the Fed stays restrictive longer.</p>
+      <p><strong>Unemployment rate</strong> — a weak jobs report can cut both ways: bad for growth expectations, but sometimes rallies indices on hopes of rate cuts.</p>
+      <p><strong>Fed funds rate</strong> — the base cost of money. Changes (or even just changed expectations) ripple through every asset class.</p>
+      <p><strong>10-Year Treasury yield</strong> — rising yields often pressure growth-heavy indices like the Nasdaq, since future earnings get discounted more heavily.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>buyittradeit.com</span>
+    <a href="https://buyittradeit.com">&larr; back to hub</a>
+  </footer>
+
+</main>
+
+<script>
+  // ============================================================
+  // LIVE DATA — fetched from our Netlify Function, which keeps
+  // the FRED API key private on the server side. Falls back to
+  // sample data if the fetch fails for any reason (function not
+  // deployed yet, key not set, FRED API hiccup, etc).
+  // ============================================================
+  const SAMPLE_DATA = [
+    { name: 'CPI (YoY)', value: '2.9%', change: '+0.1', direction: 'up', asof: 'Aug 2026 (sample)' },
+    { name: 'Unemployment Rate', value: '4.2%', change: '+0.1', direction: 'up', asof: 'Aug 2026 (sample)' },
+    { name: 'Fed Funds Rate', value: '3.625%', change: '0.0', direction: 'flat', asof: 'Sep 2026 (sample)' },
+    { name: '10-Year Treasury', value: '4.08%', change: '-0.03', direction: 'down', asof: 'Sep 2026 (sample)' }
+  ];
+
+  const SERIES = [
+    { id: 'CPIAUCSL', units: 'pc1', name: 'CPI (YoY)', suffix: '%', decimals: 1 },
+    { id: 'UNRATE', units: null, name: 'Unemployment Rate', suffix: '%', decimals: 1 },
+    { id: 'FEDFUNDS', units: null, name: 'Fed Funds Rate', suffix: '%', decimals: 3 },
+    { id: 'DGS10', units: null, name: '10-Year Treasury', suffix: '%', decimals: 2 }
+  ];
+
+  function formatChange(curr, prev, decimals) {
+    const diff = curr - prev;
+    const rounded = diff.toFixed(decimals);
+    if (Math.abs(diff) < Math.pow(10, -decimals) / 2) {
+      return { text: '0.0', direction: 'flat' };
+    }
+    return {
+      text: (diff >= 0 ? '+' : '') + rounded,
+      direction: diff >= 0 ? 'up' : 'down'
+    };
+  }
+
+  async function fetchSeries(config) {
+    let url = '/.netlify/functions/fred-proxy?series=' + config.id;
+    if (config.units) url += '&units=' + config.units;
+
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Fetch failed for ' + config.id);
+    const data = await res.json();
+
+    const obs = data.observations;
+    if (!obs || obs.length < 2) throw new Error('Not enough observations for ' + config.id);
+
+    const latest = parseFloat(obs[0].value);
+    const previous = parseFloat(obs[1].value);
+    if (isNaN(latest) || isNaN(previous)) throw new Error('Bad data for ' + config.id);
+
+    const change = formatChange(latest, previous, config.decimals);
+
+    return {
+      name: config.name,
+      value: latest.toFixed(config.decimals) + config.suffix,
+      change: change.text,
+      direction: change.direction,
+      asof: obs[0].date
+    };
+  }
+
+  async function loadLiveData() {
+    try {
+      const results = await Promise.all(SERIES.map(fetchSeries));
+      document.querySelector('.sample-notice').style.display = 'none';
+      return results;
+    } catch (err) {
+      console.warn('Live FRED fetch failed, showing sample data:', err.message);
+      return SAMPLE_DATA;
+    }
+  }
+
+  function renderCards(items) {
+    const grid = document.getElementById('macroGrid');
+    grid.innerHTML = items.map(item => {
+      const arrow = item.direction === 'up' ? '&#9650;' : item.direction === 'down' ? '&#9660;' : '&#8212;';
+      return '<div class="macro-card">' +
+        '<div class="name">' + item.name + '</div>' +
+        '<div class="value">' + item.value + '</div>' +
+        '<div class="change ' + item.direction + '">' + arrow + ' ' + item.change + '</div>' +
+        '<div class="asof">' + item.asof + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  (async function init() {
+    renderCards(SAMPLE_DATA); // show something immediately
+    const liveData = await loadLiveData();
+    renderCards(liveData);
+  })();
+</script>
+
+</body>
+</html>
